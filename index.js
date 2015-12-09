@@ -4,3 +4,5 @@
 'use strict';
 
 exports.Module = require('./utils/module');
+
+exports.FS = require('./utils/fs');

@@ -5,11 +5,6 @@ var paths = {
 };
 
 module.exports = function (grunt) {
-
-    if (process.env.NODE_ENV !== 'production') {
-        require('time-grunt')(grunt);
-    }
-
     // Project Configuration
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -25,7 +20,7 @@ module.exports = function (grunt) {
 
     //Load NPM tasks
     require('load-grunt-tasks')(grunt);
-    grunt.loadNpmTasks('grunt-execute');
+    require('time-grunt')(grunt);
 
     //Default task(s).
     grunt.registerTask('default', ['jshint']);
