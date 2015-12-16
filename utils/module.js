@@ -25,6 +25,14 @@ exports.findModules = function () {
     return deferred.promise;
 };
 
+exports.findLocalModules = function () {
+    var deferred = Q.defer();
+    _findModules(path.join(process.cwd(), 'packages/**/module.js')).then(function (files) {
+        deferred.resolve(files);
+    });
+    return deferred.promise;
+};
+
 function _findModules(modulePath, options) {
     var deferred = Q.defer();
     // async
