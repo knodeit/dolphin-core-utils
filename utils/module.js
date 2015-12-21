@@ -12,7 +12,7 @@ exports.findModules = function () {
     var deferred = Q.defer();
     // async
     Q.all([
-        _findModules(path.join(process.cwd(), 'packages/**/module.js')),
+        _findModules(path.join(process.cwd(), 'modules/**/module.js')),
         _findModules(path.join(process.cwd(), 'node_modules/dolphin-**-module/module.js')),
         _findModules(path.join(process.cwd(), 'node_modules/dolphin-**-module/modules/**/module.js'))
     ]).then(function (result) {
