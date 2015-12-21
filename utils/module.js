@@ -13,8 +13,8 @@ exports.findModules = function () {
     // async
     Q.all([
         _findModules(path.join(process.cwd(), 'packages/**/module.js')),
-        _findModules(path.join(process.cwd(), 'node_modules/dolphin-**-package/module.js')),
-        _findModules(path.join(process.cwd(), 'node_modules/dolphin-**-package/packages/**/module.js'))
+        _findModules(path.join(process.cwd(), 'node_modules/dolphin-**-module/module.js')),
+        _findModules(path.join(process.cwd(), 'node_modules/dolphin-**-module/modules/**/module.js'))
     ]).then(function (result) {
         var files = [];
         for (var i in result) {
@@ -27,7 +27,7 @@ exports.findModules = function () {
 
 exports.findLocalModules = function () {
     var deferred = Q.defer();
-    _findModules(path.join(process.cwd(), 'packages/**/module.js')).then(function (files) {
+    _findModules(path.join(process.cwd(), 'modules/**/module.js')).then(function (files) {
         deferred.resolve(files);
     });
     return deferred.promise;

@@ -1,6 +1,6 @@
 {
     "name": "dolphin-core-utils",
-    "version": "0.2.2",
+    "version": "0.3.0",
     "preferGlobal": true,
     "description": "Utils for dolphin-core",
     "author": {
